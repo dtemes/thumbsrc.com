@@ -1,0 +1,75 @@
+<!doctype html>
+<html ng-app="thumbsrc">
+	<head>
+		<title>thumbsrc</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="/css/thumbsrc.css" rel="stylesheet" />
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<a href="/" class="navbar-brand">thumbsrc</a>
+			</div>
+		</nav>
+		<div class="container" ng-controller="ThumbCtrl">
+			<div class="row">
+				<div id="image-box" class="col-lg-6">
+					<div id="image-holder">
+						<img src="/img/ajax-loader.gif" />
+					</div>
+					<form ng-submit="submit()">
+						<div class="input-group">
+							<input ng-change="fixUrl()" class="form-control" type="text" ng-model="url" />
+							<span class="input-group-btn">
+								<select class="btn btn-default" ng-change="submit()" ng-model="size" style="border-radius: 0; border-left: 0;">
+									<option value="80">@80px</option>
+									<option value="160">@160px</option>
+									<option value="320">@320px</option>
+									<option value="480">@480px</option>
+									<option value="640">@640px</option>
+								</select>
+							</span>
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="submit">Go!</button>
+							</span>
+						</div>
+					</form>
+				</div>
+				<div class="col-lg-5 col-lg-offset-1">
+					<h1>thumbsrc</h1>
+					<p>the free source of website thumbnails</p>
+					<br/>
+					<fieldset>
+						<legend>Usage</legend>
+						<p>Basic: http://www.thumbsrc.com/[url]</p>
+						<p><em>Example: http://www.thumbsrc.com/www.example.com</em></p>
+						<br/>
+						<p>With Size: http://www.thumbsrc.com/[size]/[url]</p>
+						<p><em>Example: http://www.thumbsrc.com/640/www.example.com</em></p>
+						<br/>
+						<p>Supported Sizes: 80, 160, 320, 480, 640</p>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+			<div class="container">
+				<a class="pull-right navbar-brand text-muted" target="_blank" href="http://www.timstudd.com">
+					<small>by Tim Studd</small>
+				</a>
+			</div>
+		</nav>
+		<script src="/js/angular.min.js"></script>
+		<script src="/js/jquery-1.11.0.min.js"></script>
+		<script src="/js/thumbsrc.js"></script>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-49171724-1', 'thumbsrc.com');
+			ga('send', 'pageview');
+		</script>
+	</body>
+</html>
