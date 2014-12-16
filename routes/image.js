@@ -10,7 +10,7 @@ var routes = function(app, mongoose, basedir){
 		  , params = re.exec(req.url)
 		  , url = req.url.slice(1)
 		  , size = 480
-		  , sizes = [80, 160, 320, 480, 640];
+		  , sizes = [80, 160, 320, 480, 640, 800];
 
 		var imageHash = function(url, size) {
 			var size = size || null;
